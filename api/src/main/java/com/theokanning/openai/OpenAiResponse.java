@@ -9,13 +9,15 @@ import java.util.List;
  */
 @Data
 public class OpenAiResponse<T> {
-    /**
-     * A list containing the actual results
-     */
-    public List<T> data;
-
-    /**
-     * The type of object returned, should be "list"
-     */
-    public String object;
+	
+	/**
+	 * A list containing the actual results
+	 */
+	public List<T> data;
+	
+	/**
+	 * The type of object returned, should be "list"
+	 */
+	public String object;
+	
 }
