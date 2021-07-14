@@ -27,7 +27,22 @@ public class OpenAiService {
 	
 	public final FileService fileService;
 	
+	/**
+	 * You can find your api keys at <a href="https://beta.openai.com/account/api-keys">openai.com</a>
+	 *
+	 * @param token Your OpenAi token.
+	 */
 	public OpenAiService(String token) {
+		this(token, null);
+	}
+	
+	/**
+	 * You can find your api keys at <a href="https://beta.openai.com/account/api-keys">openai.com</a>
+	 *
+	 * @param token        Your OpenAi token.
+	 * @param organization Optional organization ID if you are part of multiple organizations.
+	 */
+	public OpenAiService(String token, String organization) {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
@@ -35,7 +50,7 @@ public class OpenAiService {
 		mapper.enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS);
 		
 		OkHttpClient client = new OkHttpClient.Builder()
-				.addInterceptor(new AuthenticationInterceptor(token))
+				.addInterceptor(new AuthenticationInterceptor(token, organization))
 				.connectionPool(new ConnectionPool(5, 1, TimeUnit.SECONDS))
 				.build();
 		

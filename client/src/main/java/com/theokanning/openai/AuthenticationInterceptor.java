@@ -7,22 +7,27 @@ import okhttp3.Response;
 import java.io.IOException;
 
 /**
- * OkHttp Interceptor that adds an authorization token header
+ * OkHttp Interceptor that adds an authorization token header, and organization header if not null.
  */
 public class AuthenticationInterceptor implements Interceptor {
-
-    private final String token;
-
-    AuthenticationInterceptor(String token) {
-        this.token = token;
-    }
-
-    @Override
-    public Response intercept(Chain chain) throws IOException {
-        Request request = chain.request()
-                .newBuilder()
-                .header("Authorization", "Bearer " + token)
-                .build();
-        return chain.proceed(request);
-    }
+	
+	private final String token;
+	
+	private final String organization;
+	
+	AuthenticationInterceptor(String token, String organization) {
+		this.token = token;
+		this.organization = organization;
+	}
+	
+	@Override
+	public Response intercept(Chain chain) throws IOException {
+		Request.Builder requestBuilder = chain.request()
+				.newBuilder()
+				.header("Authorization", "Bearer " + token);
+		if (organization != null) {
+			requestBuilder.header("OpenAI-Organization", organization);
+		}
+		return chain.proceed(requestBuilder.build());
+	}
 }
