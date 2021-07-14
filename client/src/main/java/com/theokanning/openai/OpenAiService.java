@@ -7,9 +7,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.theokanning.openai.answer.AnswerRequest;
 import com.theokanning.openai.answer.AnswerResult;
+import com.theokanning.openai.classification.ClassificationRequest;
+import com.theokanning.openai.classification.ClassificationResult;
 import com.theokanning.openai.completion.CompletionRequest;
 import com.theokanning.openai.completion.CompletionResult;
 import com.theokanning.openai.engine.Engine;
+import com.theokanning.openai.finetunes.FineTuneEvent;
+import com.theokanning.openai.finetunes.FineTuneRequest;
+import com.theokanning.openai.finetunes.FineTuneResult;
 import com.theokanning.openai.search.SearchRequest;
 import com.theokanning.openai.search.SearchResult;
 import okhttp3.ConnectionPool;
@@ -103,6 +108,50 @@ public class OpenAiService {
 	 */
 	public AnswerResult answer(AnswerRequest request) {
 		return api.answer(request).blockingGet();
+	}
+	
+	/**
+	 * @see ClassificationRequest
+	 * @see ClassificationResult
+	 */
+	public ClassificationResult classification(ClassificationRequest request) {
+		return api.classification(request).blockingGet();
+	}
+	
+	/**
+	 * @see FineTuneRequest
+	 * @see FineTuneResult
+	 */
+	public FineTuneResult createFineTune(FineTuneRequest request) {
+		return api.fineTune(request).blockingGet();
+	}
+	
+	/**
+	 * @see FineTuneRequest
+	 */
+	public List<FineTuneResult> listFineTunes() {
+		return api.listFineTunes().blockingGet().data;
+	}
+	
+	/**
+	 * @see FineTuneResult
+	 */
+	public FineTuneResult getFineTune(String fineTuneId) {
+		return api.getFineTune(fineTuneId).blockingGet();
+	}
+	
+	/**
+	 * @see FineTuneResult
+	 */
+	public FineTuneResult cancelFineTune(String fineTuneId) {
+		return api.cancelFineTune(fineTuneId).blockingGet();
+	}
+	
+	/**
+	 * @see FineTuneEvent
+	 */
+	public List<FineTuneEvent> listFineTuneEvents(String fineTuneId) {
+		return api.listFineTuneEvents(fineTuneId).blockingGet().data;
 	}
 	
 }
