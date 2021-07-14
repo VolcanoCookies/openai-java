@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class Document {
 	
-	int document;
+	public Integer document;
 	
-	String text;
+	public String text;
 	
 }
