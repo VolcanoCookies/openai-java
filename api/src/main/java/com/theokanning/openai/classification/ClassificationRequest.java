@@ -41,7 +41,7 @@ public class ClassificationRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/classifications/create#classifications/create-examples">Online Docs</a>
 	 */
-	List<String> examples;
+	List<List<String>> examples;
 	
 	/**
 	 * <p>The ID of the uploaded file that contains training examples. See <a href="https://beta.openai.com/docs/api-reference/files/upload">upload file</a> for how to upload a file of the desired format and purpose.</p>
@@ -76,7 +76,7 @@ public class ClassificationRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/classifications/create#classifications/create-temperature">Online Docs</a>
 	 */
-	Number temperature;
+	Double temperature;
 	
 	/**
 	 * <p>Include the log probabilities on the <code>{@link #logprobs}</code> most likely tokens, as well the chosen tokens. For example, if <code>{@link #logprobs}</code> is 10, the API will return a list of the 10 most likely tokens. the API will always return the <code>logprob</code> of the sampled token, so there may be up to <code>logprobs+1</code> elements in the response.</p>
@@ -106,7 +106,7 @@ public class ClassificationRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/classifications/create#classifications/create-logit_bias">Online Docs</a>
 	 */
-	Map logitBias;
+	Map<String, Integer> logitBias;
 	
 	/**
 	 * <p>If set to <code>true</code>, the returned JSON will include a "prompt" field containing the final prompt that was used to request a completion. This is mainly useful for debugging purposes.</p>
