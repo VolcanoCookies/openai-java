@@ -24,15 +24,3 @@ public class ClassificationResult {
 	
 }
 
-@Data
-class Example {
-	
-	public Integer document;
-	
-	public String label;
-	
-	public String text;
-	
-	public String metadata;
-	
-}
