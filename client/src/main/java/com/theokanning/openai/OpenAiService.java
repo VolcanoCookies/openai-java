@@ -67,22 +67,40 @@ public class OpenAiService {
 		
 	}
 	
+	/**
+	 * @see Engine
+	 */
 	public List<Engine> getEngines() {
 		return api.getEngines().blockingGet().data;
 	}
 	
+	/**
+	 * @see Engine
+	 */
 	public Engine getEngine(String engineId) {
 		return api.getEngine(engineId).blockingGet();
 	}
 	
+	/**
+	 * @see CompletionRequest
+	 * @see CompletionResult
+	 */
 	public CompletionResult createCompletion(String engineId, CompletionRequest request) {
 		return api.createCompletion(engineId, request).blockingGet();
 	}
 	
+	/**
+	 * @see SearchRequest
+	 * @see SearchResult
+	 */
 	public List<SearchResult> search(String engineId, SearchRequest request) {
 		return api.search(engineId, request).blockingGet().data;
 	}
 	
+	/**
+	 * @see AnswerRequest
+	 * @see AnswerResult
+	 */
 	public AnswerResult answer(AnswerRequest request) {
 		return api.answer(request).blockingGet();
 	}
