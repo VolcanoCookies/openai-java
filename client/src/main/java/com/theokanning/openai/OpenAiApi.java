@@ -39,7 +39,7 @@ public interface OpenAiApi {
 	);
 	
 	@GET("/v1/files/{file_id}")
-	Single<FileResult> retrieveFile(@Path("file_id") String fileId);
+	Single<FileResult> getFile(@Path("file_id") String fileId);
 	
 	@GET("/v1/files")
 	Single<OpenAiResponse<FileResult>> listFiles();

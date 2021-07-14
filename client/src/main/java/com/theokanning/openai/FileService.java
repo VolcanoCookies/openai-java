@@ -45,7 +45,7 @@ public class FileService {
 	}
 	
 	public FileResult retrieveFile(String fileId) {
-		return api.retrieveFile(fileId).blockingGet();
+		return api.getFile(fileId).blockingGet();
 	}
 	
 	public List<FileResult> listFiles() {
