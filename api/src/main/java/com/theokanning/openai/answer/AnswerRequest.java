@@ -42,6 +42,7 @@ public class AnswerRequest {
 	 * @see <a href="https://beta.openai.com/docs/api-reference/answers/create#answers/create-examples">Online Docs</a>
 	 */
 	@NonNull
+	@Singular("example")
 	List<String> examples;
 	
 	/**
@@ -60,6 +61,7 @@ public class AnswerRequest {
 	 *
 	 * @see <a href="https://beta.openai.com/docs/api-reference/answers/create#answers/create-documents">Online Docs</a>
 	 */
+	@Singular("document")
 	List<String> documents;
 	
 	/**
@@ -130,6 +132,7 @@ public class AnswerRequest {
 	 *
 	 * @see <a href="https://beta.openai.com/docs/api-reference/answers/create#answers/create-stop">Online Docs</a>
 	 */
+	@Singular("stop")
 	List<String> stop;
 	
 	/**
@@ -152,6 +155,7 @@ public class AnswerRequest {
 	 *
 	 * @see <a href="https://beta.openai.com/docs/api-reference/answers/create#answers/create-logit_bias">Online Docs</a>
 	 */
+	@Singular("logitBias")
 	Map<String, Integer> logitBias;
 	
 	/**
@@ -183,6 +187,7 @@ public class AnswerRequest {
 	 *
 	 * @see <a href="https://beta.openai.com/docs/api-reference/answers/create#answers/create-expand">Online Docs</a>
 	 */
+	@Singular("expand")
 	List<String> expand;
 	
 }

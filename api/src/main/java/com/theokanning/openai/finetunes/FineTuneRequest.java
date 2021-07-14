@@ -138,6 +138,7 @@ public class FineTuneRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/fine-tunes/create#fine-tunes/create-classification_betas">Online Docs</a>
 	 */
+	@Singular("classificationBeta")
 	List<String> classificationBetas;
 	
 }

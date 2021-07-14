@@ -41,6 +41,7 @@ public class ClassificationRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/classifications/create#classifications/create-examples">Online Docs</a>
 	 */
+	@Singular("example")
 	List<List<String>> examples;
 	
 	/**
@@ -58,6 +59,7 @@ public class ClassificationRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/classifications/create#classifications/create-labels">Online Docs</a>
 	 */
+	@Singular("label")
 	List<String> labels;
 	
 	/**
@@ -106,6 +108,7 @@ public class ClassificationRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/classifications/create#classifications/create-logit_bias">Online Docs</a>
 	 */
+	@Singular("logitBias")
 	Map<String, Integer> logitBias;
 	
 	/**
@@ -134,6 +137,7 @@ public class ClassificationRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/classifications/create#classifications/create-expand">Online Docs</a>
 	 */
+	@Singular("expand")
 	List<String> expand;
 	
 }

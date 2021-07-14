@@ -34,6 +34,7 @@ public class CompletionRequest {
 	 *
 	 * @see <a href="https://beta.openai.com/docs/api-reference/completions/create#completions/create-prompt">Online Docs</a>
 	 */
+	@Singular("prompt")
 	List<String> prompt;
 	
 	/**
@@ -107,6 +108,7 @@ public class CompletionRequest {
 	 *
 	 * @see <a href="https://beta.openai.com/docs/api-reference/completions/create#completions/create-stop">Online Docs</a>
 	 */
+	@Singular("stop")
 	List<String> stop;
 	
 	/**
@@ -153,6 +155,7 @@ public class CompletionRequest {
 	 *
 	 * @see <a href="https://beta.openai.com/docs/api-reference/completions/create#completions/create-logit_bias">Online Docs</a>
 	 */
+	@Singular("logitBias")
 	Map<String, Integer> logitBias;
 	
 }

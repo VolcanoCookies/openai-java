@@ -34,6 +34,7 @@ public class SearchRequest {
 	 *
 	 * @see <a href="https://beta.openai.com/docs/api-reference/searches/create#searches/create-documents">Online Docs</a>
 	 */
+	@Singular("document")
 	List<String> documents;
 	
 	/**
