@@ -75,7 +75,7 @@ public class FineTuneRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/fine-tunes/create#fine-tunes/create-learning_rate_multiplier">Online Docs</a>
 	 */
-	Number learningRateMultiplier;
+	Double learningRateMultiplier;
 	
 	/**
 	 * <p>On classification tasks, we recommend setting this to <code>false</code>.</p>
@@ -98,7 +98,7 @@ public class FineTuneRequest {
 	 * <p>
 	 * <a href="https://beta.openai.com/docs/api-reference/fine-tunes/create#fine-tunes/create-prompt_loss_weight">Online Docs</a>
 	 */
-	Number promptLossWeight;
+	Double promptLossWeight;
 	
 	/**
 	 * <p>If set, we calculate classification-specific metrics such as accuracy and F-1 score using the validation set at the end of every epoch. These metrics can be viewed in the <a href="https://beta.openai.com/docs/guides/fine-tuning/analyzing-your-fine-tuned-model">results file</a>. </p>
